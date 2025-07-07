@@ -5,29 +5,23 @@ import { Target, Eye, Users, Award, TrendingUp, Zap } from 'lucide-react';
 const AboutPage = () => {
   const team = [
     {
-      name: 'Ana Paula Silva',
+      name: 'Renan Costa',
       role: 'CEO & Estrategista Digital',
       specialty: 'Google Ads & Meta Ads',
-      experience: '8+ anos'
+      experience: '7+ anos'
     },
     {
-      name: 'Carlos Mendes',
+      name: 'Harvey Souza',
       role: 'CTO & Desenvolvedor',
       specialty: 'IA & Automações',
+      experience: '5+ anos'
+    },
+    {
+      name: 'Kennedy Souza',
+      role: 'CEO & Head de Performance',
+      specialty: 'CRO & Analytics',
       experience: '10+ anos'
     },
-    {
-      name: 'Marina Santos',
-      role: 'Head de Performance',
-      specialty: 'CRO & Analytics',
-      experience: '6+ anos'
-    },
-    {
-      name: 'Rafael Costa',
-      role: 'Especialista em SEO',
-      specialty: 'SEO & Conteúdo',
-      experience: '7+ anos'
-    }
   ];
 
   const values = [
@@ -211,12 +205,12 @@ const AboutPage = () => {
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:border-[#00BFFF]/50 transition-all duration-300 hover:transform hover:scale-105">
+                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:border-[#00BFFF]/50 transition-all duration-300 hover:transform hover:scale-105 flex flex-col items-center text-center h-full">
                   <div className="w-16 h-16 bg-gradient-to-br from-[#00BFFF] to-[#8A2BE2] rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                     <value.icon className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{value.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-4 min-h-[56px] flex items-center justify-center">{value.title}</h3>
+                  <p className="text-gray-300 leading-relaxed min-h-[64px] flex items-center justify-center">{value.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -242,7 +236,7 @@ const AboutPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -289,17 +283,22 @@ const AboutPage = () => {
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {['Google Partners', 'Meta Business', 'TikTok Partners', 'LinkedIn Partners'].map((partner, index) => (
+            {[
+              { name: 'Google Partners', logo: '/googlepartner.png' },
+              { name: 'Meta Business', logo: '/metaads.png' },
+              { name: 'TikTok Partners', logo: '/tiktok.png' },
+              { name: 'LinkedIn Partners', logo: '/linkedinads.png' }
+            ].map((partner, index) => (
               <motion.div
-                key={partner}
+                key={partner.name}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-[#00BFFF]/30 transition-all duration-300 text-center"
               >
-                <div className="w-16 h-12 bg-white rounded-lg mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-gray-800 font-bold text-xs">{partner}</span>
+                <div className="w-32 h-20 bg-white rounded-lg mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                  <img src={partner.logo} alt={partner.name} className="h-16 w-auto object-contain" />
                 </div>
               </motion.div>
             ))}

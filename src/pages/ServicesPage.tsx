@@ -15,7 +15,7 @@ const ServicesPage = () => {
     {
       icon: Target,
       title: 'Gestão de Tráfego Pago',
-      description: 'Estratégias avançadas em Google, Meta, TikTok e LinkedIn Ads com rastreamento completo do funil usando AdsMagic.',
+      description: 'Estratégias avançadas em Google, Meta, TikTok e LinkedIn Ads com rastreamento completo do funil.',
       features: [
         'Campanhas otimizadas para máximo ROI',
         'Rastreamento 100% do funil de vendas',

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 
@@ -46,7 +45,7 @@ const FinalCTASection = () => {
               </a>
               
               <a
-                href="https://wa.me/5511999999999?text=Olá! Quero escalar meu negócio com a Escaliq."
+                href="https://wa.me/5516981985528?text=Olá! Quero escalar meu negócio com a Escaliq."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-green-700 transition-colors duration-300 flex items-center justify-center space-x-2"
@@ -60,7 +59,7 @@ const FinalCTASection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
             <div className="text-center">
               <div className="text-xl sm:text-2xl font-bold text-[#00BFFF] mb-2">24h</div>
-              <div className="text-xs sm:text-sm text-gray-400">Resposta garantida</div>
+              <div className="text-xs sm:text-sm text-gray-400">Suporte disponivel para solucionar todas suas dúvidas sobre marketing</div>
             </div>
             <div className="text-center">
               <div className="text-xl sm:text-2xl font-bold text-[#00BFFF] mb-2">100%</div>
@@ -68,7 +67,7 @@ const FinalCTASection = () => {
             </div>
             <div className="text-center">
               <div className="text-xl sm:text-2xl font-bold text-[#00BFFF] mb-2">Grátis</div>
-              <div className="text-xs sm:text-sm text-gray-400">Diagnóstico completo</div>
+              <div className="text-xs sm:text-sm text-gray-400">Diagnóstico completo + PDF com dicas de como escalar seu negócio</div>
             </div>
           </div>
         </motion.div>

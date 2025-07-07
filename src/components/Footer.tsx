@@ -9,7 +9,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="space-y-4 sm:col-span-2 lg:col-span-1">
-            <h3 className="text-xl sm:text-2xl font-bold text-[#00BFFF]">ESCALIQ</h3>
+            <img
+              src="/logo-EscaliqRP.svg"
+              alt="Logo Escaliq"
+              className="h-16 sm:h-20 w-auto object-contain"
+              style={{ maxWidth: '180px' }}
+            />
             <p className="text-gray-400 text-sm leading-relaxed">
               Marketing com inteligência: do clique à conversão automatizada. 
               Criamos estratégias escaláveis com tecnologia e performance real.
@@ -68,7 +73,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-[#00BFFF] flex-shrink-0" />
-                <span className="text-gray-400 text-sm">(11) 99999-9999</span>
+                <span className="text-gray-400 text-sm">(16) 98198-5528</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-[#00BFFF] flex-shrink-0" />
@@ -76,10 +81,10 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-[#00BFFF] flex-shrink-0" />
-                <span className="text-gray-400 text-sm">São Paulo, SP</span>
+                <span className="text-gray-400 text-sm">Ribeirão Preto, SP</span>
               </div>
               <a
-                href="https://wa.me/5511999999999?text=Olá! Gostaria de mais informações."
+                href="https://wa.me/5516981985528?text=Olá! Gostaria de mais informações."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-green-700 transition-colors w-full sm:w-auto justify-center sm:justify-start"
@@ -94,11 +99,11 @@ const Footer = () => {
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-800">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-gray-400 text-sm text-center sm:text-left">
-              © 2024 Escaliq. Todos os direitos reservados.
+              © 2025 Escaliq. Todos os direitos reservados.
             </p>
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-[#00BFFF] transition-colors text-center">Política de Privacidade</a>
-              <a href="#" className="hover:text-[#00BFFF] transition-colors text-center">Termos de Uso</a>
+              <Link to="/privacidade" className="hover:text-[#00BFFF] transition-colors text-center">Política de Privacidade</Link>
+              <Link to="/termos" className="hover:text-[#00BFFF] transition-colors text-center">Termos de Uso</Link>
             </div>
           </div>
         </div>

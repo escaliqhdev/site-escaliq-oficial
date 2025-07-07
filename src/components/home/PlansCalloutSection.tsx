@@ -23,15 +23,15 @@ const PlansCalloutSection = () => {
             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#00BFFF] flex-shrink-0" />
-                <span className="text-sm sm:text-base text-gray-300">Plano Inicial – Base Digital - R$3.700/mês </span>
+                <span className="text-sm sm:text-base text-gray-300">Plano Essencial – Base Digital - A Consultar </span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#00BFFF] flex-shrink-0" />
-                <span className="text-sm sm:text-base text-gray-300">Fase 2 – Escala e Funil - R$6.500/mês</span>
+                <span className="text-sm sm:text-base text-gray-300">Fase 2 – Escala e Funil - A Consultar</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-[#00BFFF] flex-shrink-0" />
-                <span className="text-sm sm:text-base text-gray-300">Fase 3 – Máquina de Vendas - R$10.000/mês</span>
+                <span className="text-sm sm:text-base text-gray-300">Fase 3 – Máquina de Vendas - A Consultar</span>
               </div>
             </div>
 
@@ -53,8 +53,8 @@ const PlansCalloutSection = () => {
           >
             <div className="grid grid-cols-1 gap-4 sm:gap-6">
               <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Plano Inicial – Base Digital</h3>
-                <p className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4">Ideal para negócios locais ou empresas que estão começando no digital.</p>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Plano Essencial – Base Digital</h3>
+                <p className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4">Ideal para negócios locais ou empresas que não estão faturando no digital.</p>
                 <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-400">
                   <li>• Landing Page Simples otimizada para conversão</li>
                   <li>• Gestão de Tráfego Pago (Google ou Meta Ads)</li>
@@ -77,7 +77,7 @@ const PlansCalloutSection = () => {
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Fase 3 – Máquina de Vendas</h3>
                 <p className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4">Solução completa para escalar e automatizar vendas.</p>
                 <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-400">
-                  <li>• Tudo da Fase 2</li>
+                  <li>• Tudo da Fase 1 e 2</li>
                   <li>• SEO Estratégico + IA Avançada</li>
                   <li>• CRM Completo + Conteúdo + Relatórios Gerenciais</li>
                 </ul>

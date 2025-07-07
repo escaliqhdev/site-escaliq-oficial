@@ -4,10 +4,10 @@ const PartnershipsSection = () => {
   const partners = [
     { name: 'Google Ads', logo: '/googleads.png' },
     { name: 'Meta Ads', logo: '/metaads.png' },
-    { name: 'TikTok Ads', logo: '/tiktokpartners.png' },
-    { name: 'LinkedIn Ads', logo: '/linkedinpartners.png' },
+    { name: 'TikTok Ads', logo: '/tiktok.png' },
+    { name: 'LinkedIn Ads', logo: '/linkedinads.png' },
     { name: 'Google Partners', logo: '/googlepartner.png' },
-    { name: 'AdsMagic', logo: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpg?auto=compress&cs=tinysrgb&w=400' },
+    { name: 'open-ai', logo: '/open-ai-logo.webp' },
     { name: 'Reportei', logo: '/reportei.png' },
   ];
 
@@ -40,8 +40,8 @@ const PartnershipsSection = () => {
                 key={`${partner.name}-${index}`}
                 className="flex-shrink-0 bg-white/10 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:bg-white/20 transition-all duration-300 group"
               >
-                <div className="w-24 h-16 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <img src={partner.logo} alt={partner.name} className="h-12 object-contain" />
+                <div className="w-32 h-20 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <img src={partner.logo} alt={partner.name} className="h-20 w-auto object-contain" />
                 </div>
               </div>
             ))}

@@ -23,13 +23,46 @@ const ContactPage = () => {
     message: ''
   });
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
+  const [whatsMsg, setWhatsMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setIsLoading(true);
+    setErrorMsg('');
+    setIsSuccess(false);
+    try {
+      const response = await fetch('https://hook.us2.make.com/egirgl8g36ti6434i3btwy5dde6bbshm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (!response.ok) {
+        throw new Error('Erro ao enviar o formulário. Tente novamente.');
+      }
+      // Monta mensagem para WhatsApp
+      const msg =
+        `Olá! Gostaria de atendimento personalizado.\n` +
+        `Nome: ${formData.name}\n` +
+        `E-mail: ${formData.email}\n` +
+        `Telefone: ${formData.phone}\n` +
+        `Empresa: ${formData.company}\n` +
+        `Segmento: ${formData.segment}\n` +
+        `Objetivo: ${formData.objective}\n` +
+        `Mensagem: ${formData.message}`;
+      setWhatsMsg(encodeURIComponent(msg));
+      setIsSuccess(true);
+      setTimeout(() => {
+        setShowPopup(true);
+        setIsLoading(false);
+      }, 800);
+    } catch (err: any) {
+      setErrorMsg(err.message || 'Erro ao enviar o formulário.');
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -168,24 +201,28 @@ const ContactPage = () => {
                   <label htmlFor="segment" className="block text-sm font-medium text-gray-300 mb-2">
                     Segmento do Negócio *
                   </label>
-                  <select
-                    id="segment"
-                    name="segment"
-                    required
-                    value={formData.segment}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00BFFF] transition-colors text-sm sm:text-base"
-                  >
-                    <option value="">Selecione seu segmento</option>
-                    <option value="e-commerce">E-commerce</option>
-                    <option value="servicos">Serviços</option>
-                    <option value="saude">Saúde</option>
-                    <option value="educacao">Educação</option>
-                    <option value="tecnologia">Tecnologia</option>
-                    <option value="consultoria">Consultoria</option>
-                    <option value="imobiliario">Imobiliário</option>
-                    <option value="outros">Outros</option>
-                  </select>
+                  <div className="relative">
+                    <Building className="absolute left-3 top-4 h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
+                    <select
+                      id="segment"
+                      name="segment"
+                      required
+                      value={formData.segment}
+                      onChange={handleChange}
+                      className="w-full pl-10 sm:pl-12 pr-4 py-3 bg-[#0B0B0F] border border-[#00BFFF] rounded-lg text-white focus:outline-none focus:border-[#00BFFF] transition-colors text-sm sm:text-base appearance-none"
+                      style={{ backgroundImage: 'linear-gradient(90deg, #00BFFF 0%, #8A2BE2 100%)', backgroundBlendMode: 'overlay' }}
+                    >
+                      <option value="">Selecione seu segmento</option>
+                      <option value="e-commerce">E-commerce</option>
+                      <option value="servicos">Serviços</option>
+                      <option value="saude">Saúde</option>
+                      <option value="educacao">Educação</option>
+                      <option value="tecnologia">Tecnologia</option>
+                      <option value="consultoria">Consultoria</option>
+                      <option value="imobiliario">Imobiliário</option>
+                      <option value="outros">Outros</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>
@@ -200,7 +237,8 @@ const ContactPage = () => {
                       required
                       value={formData.objective}
                       onChange={handleChange}
-                      className="w-full pl-10 sm:pl-12 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-[#00BFFF] transition-colors text-sm sm:text-base"
+                      className="w-full pl-10 sm:pl-12 pr-4 py-3 bg-[#0B0B0F] border border-[#00BFFF] rounded-lg text-white focus:outline-none focus:border-[#00BFFF] transition-colors text-sm sm:text-base appearance-none"
+                      style={{ backgroundImage: 'linear-gradient(90deg, #00BFFF 0%, #8A2BE2 100%)', backgroundBlendMode: 'overlay' }}
                     >
                       <option value="">Selecione seu objetivo</option>
                       <option value="gerar-leads">Gerar mais leads</option>
@@ -230,12 +268,17 @@ const ContactPage = () => {
 
                 <button
                   type="submit"
-                  disabled={isSubmitted}
-                  className="w-full bg-gradient-to-r from-[#00BFFF] to-[#8A2BE2] text-white py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:shadow-lg hover:shadow-[#00BFFF]/25 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+                  disabled={isLoading}
+                  className={`w-full bg-gradient-to-r from-[#00BFFF] to-[#8A2BE2] text-white py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold flex items-center justify-center space-x-2 transition-all duration-300 ${isLoading ? 'opacity-60 cursor-not-allowed' : 'hover:shadow-lg hover:shadow-[#00BFFF]/25'}`}
                 >
-                  {isSubmitted ? (
+                  {isLoading ? (
                     <>
-                      <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
+                      <span>Enviando...</span>
+                    </>
+                  ) : isSuccess ? (
+                    <>
+                      <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-400" />
                       <span>Mensagem Enviada!</span>
                     </>
                   ) : (
@@ -245,7 +288,38 @@ const ContactPage = () => {
                     </>
                   )}
                 </button>
+                {errorMsg && (
+                  <div className="mt-2 text-red-500 text-sm text-center">{errorMsg}</div>
+                )}
               </form>
+              {/* Popup de sucesso */}
+              {showPopup && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+                  <div className="bg-[#181824] border border-[#00BFFF] rounded-2xl p-8 max-w-md w-full text-center shadow-xl">
+                    <h3 className="text-2xl font-bold text-[#00BFFF] mb-4">Formulário enviado com sucesso!</h3>
+                    <p className="text-gray-300 mb-6">Nossa equipe entrará em contato em breve. Se preferir, clique abaixo para falar direto no WhatsApp com seus dados já preenchidos:</p>
+                    <a
+                      href={`https://wa.me/5516981985528?text=${whatsMsg}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-green-700 transition-colors mb-4"
+                    >
+                      <MessageCircle className="h-5 w-5" />
+                      <span>Falar no WhatsApp</span>
+                    </a>
+                    <button
+                      onClick={() => setShowPopup(false)}
+                      className="block w-full mt-2 bg-[#00BFFF] text-black px-4 py-2 rounded-lg font-semibold hover:bg-[#0099CC] transition-colors"
+                    >
+                      Fechar
+                    </button>
+                  </div>
+                </div>
+              )}
+              {/* Mensagem de confirmação */}
+              {isSuccess && !showPopup && !isLoading && (
+                <div className="mt-4 text-green-400 text-center font-semibold">Formulário enviado com sucesso! Aguarde, abrindo opções...</div>
+              )}
             </motion.div>
 
             {/* Contact Info */}
@@ -266,7 +340,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="text-white font-semibold text-sm sm:text-base">Telefone</h4>
-                      <p className="text-gray-400 text-sm">(11) 99999-9999</p>
+                      <p className="text-gray-400 text-sm">(16) 98198-5528</p>
                     </div>
                   </div>
 
@@ -286,14 +360,14 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="text-white font-semibold text-sm sm:text-base">Localização</h4>
-                      <p className="text-gray-400 text-sm">São Paulo, SP - Brasil</p>
+                      <p className="text-gray-400 text-sm">Ribeirão Preto, SP - Brasil</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-700">
                   <a
-                    href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um diagnóstico gratuito."
+                    href="https://wa.me/5516981985528?text=Olá! Gostaria de solicitar um diagnóstico gratuito."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full bg-green-600 text-white py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-green-700 transition-colors duration-300 flex items-center justify-center space-x-2"

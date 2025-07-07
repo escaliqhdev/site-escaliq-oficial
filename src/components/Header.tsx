@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,8 +39,13 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16">
-          <Link to="/" className="text-xl sm:text-2xl font-bold text-[#00BFFF] z-50">
-            ESCALIQ
+          <Link to="/" className="z-50 flex items-center space-x-2">
+            <img
+              src="/logo-EscaliqH.svg"
+              alt="Logo Escaliq"
+              className="h-8 sm:h-12 w-auto object-contain"
+              style={{ maxWidth: '160px' }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -61,7 +66,7 @@ const Header = () => {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:flex items-center">
             <a
-              href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento."
+              href="https://wa.me/5516981985528?text=Olá! Gostaria de solicitar um orçamento."
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#00BFFF] text-black px-4 xl:px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#0099CC] transition-colors duration-200 flex items-center space-x-2"
@@ -118,7 +123,7 @@ const Header = () => {
                   className="pt-4"
                 >
                   <a
-                    href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento."
+                    href="https://wa.me/5516981985528?text=Olá! Gostaria de solicitar um orçamento."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block mx-3 bg-[#00BFFF] text-black px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#0099CC] transition-colors duration-200 text-center"

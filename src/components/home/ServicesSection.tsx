@@ -31,14 +31,14 @@ const ServicesSection = () => {
     {
       icon: Brain,
       title: 'IA para Atendimento',
-      description: 'Chatbots inteligentes que qualificam leads e respondem dúvidas 24/7',
+      description: 'Chatbots inteligentes que qualificam leads e respondem dúvidas 24/7, Otimizando o faturamento',
       features: ['Atendimento 24h', 'Qualificação automática', 'Integração total']
     },
     {
       icon: BarChart3,
       title: 'Análise de Dados e Relatórios',
       description: 'Dashboards completos com métricas de performance e insights estratégicos',
-      features: ['Relatórios detalhados', 'Insights acionáveis', 'Acompanhamento semanal']
+      features: ['Relatórios detalhados', 'Insights acionáveis', 'Acompanhamento constante']
     },
     {
       icon: Search,

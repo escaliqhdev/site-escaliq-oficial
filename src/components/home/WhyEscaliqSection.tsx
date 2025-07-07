@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Zap, Users, TrendingUp } from 'lucide-react';
 
@@ -6,7 +5,7 @@ const WhyEscaliqSection = () => {
   const advantages = [
     {
       icon: CheckCircle,
-      title: 'Rastreamento 100% do funil com AdsMagic',
+      title: 'Rastreamento 100% do funil',
       description: 'Acompanhe cada etapa da jornada do cliente com precisão absoluta'
     },
     {

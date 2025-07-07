@@ -12,17 +12,17 @@ import {
 const PlansPage = () => {
   const plans = [
     {
-      name: 'Plano Inicial – Base Digital',
-      price: 'R$ 3.700',
+      name: 'Plano Essencial – Base Digital',
+      price: 'A Consultar',
       period: '/mês',
       description: 'Ideal para negócios locais ou empresas que estão começando a investir no digital com foco em resultados rápidos e rastreáveis.',
       badge: 'Promoção de Entrada',
       color: 'from-[#00BFFF] to-[#0099CC]',
       features: [
         'Landing Page Simples (1 seção otimizada para conversão)',
-        'Gestão de Tráfego Pago (Google OU Meta Ads) – até R$3.000 de verba',
+        'Gestão de Tráfego Pago (Google OU Meta Ads) – verba a ser acordada',
         'Painel de Relatórios (via Reportei)',
-        'CRM básico com WhatsApp (funil automatizado com AdsMagic)'
+        'CRM básico com WhatsApp (funil automatizado)'
       ],
       benefits: [
         'Aumento rápido de leads qualificados',
@@ -35,7 +35,7 @@ const PlansPage = () => {
     },
     {
       name: 'Fase 2 – Escala e Funil',
-      price: 'R$ 6.500',
+      price: 'A Consultar',
       period: '/mês',
       description: 'Para empresas que já validaram sua operação e querem escalar com inteligência e tecnologia.',
       badge: 'Mais Vendido',
@@ -52,14 +52,14 @@ const PlansPage = () => {
         'Redução do custo por lead',
         'Acompanhamento estratégico quinzenal',
         'Segmentação avançada para vendas recorrentes',
-        'Até R$3.000 de mídia incluído',
+        'Verba de mídia incluída: a ser definida',
         'Acima disso, acréscimo de 20% sobre o excedente',
         'Contrato mínimo recomendado: 6 meses'
       ]
     },
     {
       name: 'Fase 3 – Máquina de Vendas',
-      price: 'R$ 10.000',
+      price: 'A Consultar',
       period: '/mês',
       description: 'Para empresas que querem estruturar um ecossistema avançado de performance e vendas automatizadas.',
       badge: 'Mais Completo',
@@ -79,8 +79,8 @@ const PlansPage = () => {
         'Leads ultraqualificados e prontos para fechar',
         'Conteúdo que posiciona sua marca no Google',
         'Relatórios gerenciais para decisões estratégicas',
-        'Implementação: R$15.000',
-        'Até R$5.000 de mídia incluído',
+        'Implementação: A Consultar',
+        'Verba de mídia incluída: a ser definida',
         'Acima disso, acréscimo de 20% sobre a verba excedente',
         'Contrato mínimo recomendado: 12 meses'
       ]
@@ -90,22 +90,22 @@ const PlansPage = () => {
   const addons = [
     {
       name: 'TikTok Ads',
-      price: 'R$ 1000/mês',
+      price: 'A Consultar',
       description: 'Campanhas específicas para TikTok'
     },
     {
       name: 'LinkedIn Ads',
-      price: 'R$ 1.200/mês',
+      price: 'A Consultar',
       description: 'Campanhas B2B no LinkedIn'
     },
     {
       name: 'Blog + SEO Básico',
-      price: 'R$ 1.500/mês',
+      price: 'A Consultar',
       description: '8 artigos/mês otimizados para SEO'
     },
     {
       name: 'Consultoria Avançada',
-      price: 'R$ 2.000/mês',
+      price: 'A Consultar',
       description: 'Reuniões Mensais + estratégia personalizada'
     }
   ];
@@ -113,8 +113,8 @@ const PlansPage = () => {
   const packages = [
     {
       name: 'Google Meu Negócio – Setup Completo',
-      price: 'R$ 500',
-      period: '(pagamento único)',
+      price: 'A Consultar',
+      period: '/mês',
       description: 'Ative e otimize sua presença local no Google.',
       features: [
         'Criação e verificação da ficha',
@@ -127,7 +127,7 @@ const PlansPage = () => {
     },
     {
       name: 'Manutenção de Site – Básico',
-      price: 'R$ 300',
+      price: 'A Consultar',
       period: '/mês',
       description: 'Manutenção técnica e visual para manter seu site estável, seguro e funcionando.',
       features: [
@@ -141,7 +141,7 @@ const PlansPage = () => {
     },
     {
       name: 'Manutenção de Site – Avançado',
-      price: 'R$ 600',
+      price: 'A Consultar',
       period: '/mês',
       description: 'Mais performance, estrutura e suporte técnico contínuo.',
       features: [
@@ -155,7 +155,7 @@ const PlansPage = () => {
     },
     {
       name: 'Pacote SEO Essencial',
-      price: 'R$ 500',
+      price: 'A Consultar',
       period: '/mês',
       description: 'Para quem quer começar a aparecer no Google.',
       features: [
@@ -168,7 +168,7 @@ const PlansPage = () => {
     },
     {
       name: 'Pacote SEO Avançado',
-      price: 'R$ 1.200',
+      price: 'A Consultar',
       period: '/mês',
       description: 'Para escalar tráfego orgânico e competir nos buscadores.',
       features: [
@@ -276,7 +276,7 @@ const PlansPage = () => {
                       <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a
-                      href={`https://wa.me/5511999999999?text=Olá! Tenho interesse no plano ${plan.name}.`}
+                      href={`https://wa.me/5516981985528?text=Olá! Tenho interesse no plano ${plan.name}.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full border border-green-600 text-green-400 py-2 sm:py-3 rounded-full font-medium hover:bg-green-600 hover:text-white transition-colors duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base"
@@ -460,7 +460,7 @@ const PlansPage = () => {
                 <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um diagnóstico gratuito."
+                href="https://wa.me/5516981985528?text=Olá! Gostaria de solicitar um diagnóstico gratuito."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-green-700 transition-colors duration-300 flex items-center justify-center space-x-2"

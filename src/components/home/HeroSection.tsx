@@ -75,15 +75,15 @@ const HeroSection = () => {
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 pt-12 sm:pt-16 border-t border-gray-800 px-4 sm:px-0"
           >
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00BFFF] mb-2">+40</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00BFFF] mb-2">+100</div>
               <div className="text-sm sm:text-base text-gray-400">Milhões faturados para nossos clientes</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00BFFF] mb-2">+1.5</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00BFFF] mb-2">+4.5</div>
               <div className="text-sm sm:text-base text-gray-400">Milhões investidos em anúncios</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00BFFF] mb-2">+5</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00BFFF] mb-2">+20</div>
               <div className="text-sm sm:text-base text-gray-400">Mil anúncios criados no Meta</div>
             </div>
           </motion.div>
